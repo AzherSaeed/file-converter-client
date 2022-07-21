@@ -1,0 +1,162 @@
+{
+  "cards": [
+    {
+      "id": 1,
+      "image": "images/card-icon-5.png",
+      "title": "Minto Pyramid",
+      "category": "communication",
+      "desc": "Make your communication more efficient and clear."
+    },
+    {
+      "id": 2,
+      "image": "images/card-icon-6.png",
+      "title": "Situation-Behavior-Impact",
+      "category": "communication",
+      "desc": "Give clearer feedback to others without judgement."
+    },
+    {
+      "id": 3,
+      "image": "images/card-icon.png",
+      "title": "Concept map",
+      "category": "SYSTEMS THINKING",
+      "desc": "Understand relationships between entities in a concept or system."
+    },
+    {
+      "id": 4,
+      "image": "images/card-icon-7.png",
+      "title": "Ishikawa Diagram",
+      "category": "PROBLEM SOLVING",
+      "desc": "Identify root causes of problems."
+    },
+
+    {
+      "id": 5,
+      "image": "images/card-icon-8.png",
+      "title": " Cynefin framework",
+      "category": "DECISION MAKING",
+      "desc": " Make sense of different situations to choose an appropriate response."
+    },
+    {
+      "id": 6,
+      "image": "images/card-icon.png",
+      "title": "Conflict Resolution Diagram",
+      "category": "PROBLEM SOLVING",
+      "desc": "Find win-win solutions to conflicts"
+    },
+    {
+      "id": 7,
+      "image": "images/card-icon-9.png",
+      "title": "Six Thinking Hats",
+      "category": "DECISION MAKING",
+      "desc": "Look at a decision from different perspectives"
+    },
+
+    {
+      "id": 8,
+      "image": "images/card-icon-10.png",
+      "title": "Productive Thinking Model",
+      "category": "PROBLEM SOLVING",
+      "desc": "Solve problems creatively and efficiently."
+    },
+    {
+      "id": 9,
+      "image": "images/card-icon-2.png",
+      "title": " Connection circles",
+      "category": "SYSTEMS THINKING",
+      "desc": "Understand relationships and identify feedback loops within systems."
+    },
+    {
+      "id": 10,
+      "image": "images/card-icon-11.png",
+      "title": "Second-order thinking",
+      "category": "DECISION MAKING",
+      "desc": "Consider the long-term consequences of your decisions."
+    },
+    {
+      "id": 11,
+      "image": "images/card-icon-3.png",
+      "title": "Iceberg Model",
+      "category": "SYSTEMS THINKING",
+      "desc": "Uncover root causes of events by looking at hidden levels of abstractions."
+    },
+    {
+      "id": 12,
+      "image": "images/card-icon-12.png",
+      "title": "Eisenhower Matrix",
+      "category": "DECISION MAKING",
+      "desc": "Prioritize your actions and tasks by importance and urgency"
+    },
+    {
+      "id": 13,
+      "image": "images/card-icon-13.png",
+      "title": "Ladder of inference",
+      "category": "DECISION MAKING",
+      "desc": "Avoid jumping to conclusions. Make decisions based on reality."
+    },
+    {
+      "id": 14,
+      "image": "images/card-icon-13.png",
+      "title": "Abstraction laddering",
+      "category": "DECISION MAKING",
+      "desc": "Frame your problem better with different levels of abstraction."
+    },
+    {
+      "id": 15,
+      "image": "images/card-icon-14.png",
+      "title": "Decision matrix",
+      "category": "DECISION MAKING",
+      "desc": "Choose the best option by considering multiple factors."
+    },
+    {
+      "id": 16,
+      "image": "images/card-icon-15.png",
+      "title": "Inversion",
+      "category": "PROBLEM SOLVING",
+      "desc": "Approach a problem from a different point of view."
+    },
+    {
+      "id": 17,
+      "image": "images/card-icon.png",
+      "title": "Issue trees",
+      "category": "PROBLEM SOLVING",
+      "desc": "Structure and solve problems in a systematic way."
+    },
+    {
+      "id": 18,
+      "image": "images/card-icon-16.png",
+      "title": "Confidence determines speed vs. quality",
+      "category": "DECISION MAKING",
+      "desc": "Determine a trade-off between speed and quality when building products."
+    },
+    {
+      "id": 19,
+      "image": "images/card-icon-5.png",
+      "title": "First principles",
+      "category": "PROBLEM SOLVING",
+      "desc": "Break down complex problems into basic elements and create innovative solutions from there."
+    },
+    {
+      "id": 20,
+      "image": "images/card-icon-17.png",
+      "title": "Balancing feedback loop",
+      "category": "SYSTEMS THINKING",
+      "desc": "Mechanism that pushes back against a change to create stability."
+    },
+    {
+      "id": 21,
+      "image": "images/card-icon-4.png",
+      "title": "Reinforcing feedback loop",
+      "category": "SYSTEMS THINKING",
+      "desc": "Make your communication more efficient and clear."
+    },
+    {
+      "id": 22,
+      "image": "images/card-icon-12.png",
+      "title": "Hard choice model",
+      "category": "DECISION MAKING",
+      "desc": "Figure out what kind of a decision you're making."
+    }
+    
+  ]
+
+}

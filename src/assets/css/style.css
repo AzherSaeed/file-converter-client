@@ -8,14 +8,6 @@ body {
   font-family: 'Inter', sans-serif !important;
   background-color: #fefdfb !important; }
 
-.fixd-img {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem; }
-  @media (max-width: 992px) {
-    .fixd-img {
-      display: none; } }
-
 .hero {
   min-height: 400px;
   background-color: rgba(88, 93, 95, 0.05);
