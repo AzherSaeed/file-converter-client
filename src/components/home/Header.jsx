@@ -20,7 +20,7 @@ export class Header extends Component {
                 <div className="header-toggle">
                 <i onClick={this.toggerHandler} className={this.state.closetoggle ? 'fa fa-bars' : 'fa fa-times'}></i>
                 </div>
-                <div className={this.state.closetoggle ? 'header-nav ' : ' header-navopen'}>
+                <div className={this.state.closetoggle ? 'header-nav' : 'header-navopen'}>
                     <a href="#">Tools guide</a>
                     <a href="#">Templates</a>
                     <a href="#">App</a>
