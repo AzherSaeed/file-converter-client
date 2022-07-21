@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import imgic from"../../assets/img/card-icon.png";
 import imgic2 from"../../assets/img/card-icon-2.png";
 import imgic3 from"../../assets/img/card-icon-3.png";
@@ -19,8 +19,30 @@ import imgic17 from"../../assets/img/card-icon-17.png";
 
 
 export default function ContentCard() {
+    const axios = require('axios');
+    const [cards, setCards] = useState([]);
+
+    useEffect(() => {   
+        
+        axios.get('http://localhost:8000/cards')
+        .then(function (response) {
+            // handle success
+            
+            setCards(response.data);
+            
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        });
+    },[]);
+    if(!cards){
+        return <h1>Loading</h1>
+    }
+   
   return (
     <div className='main-content'>
+
     <div className="main-content-card">
         
             <img src={imgic5} alt="" />

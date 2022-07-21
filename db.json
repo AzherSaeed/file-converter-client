@@ -5,6 +5,7 @@
       "image": "images/card-icon-5.png",
       "title": "Minto Pyramid",
       "category": "communication",
+      "categorysty": "communication",
       "desc": "Make your communication more efficient and clear."
     },
     {
@@ -12,6 +13,7 @@
       "image": "images/card-icon-6.png",
       "title": "Situation-Behavior-Impact",
       "category": "communication",
+      "categorysty": "communication",
       "desc": "Give clearer feedback to others without judgement."
     },
     {
@@ -19,6 +21,7 @@
       "image": "images/card-icon.png",
       "title": "Concept map",
       "category": "SYSTEMS THINKING",
+      "categorysty": "sys",
       "desc": "Understand relationships between entities in a concept or system."
     },
     {
@@ -26,6 +29,7 @@
       "image": "images/card-icon-7.png",
       "title": "Ishikawa Diagram",
       "category": "PROBLEM SOLVING",
+      "categorysty": "sol",
       "desc": "Identify root causes of problems."
     },
 
@@ -34,6 +38,7 @@
       "image": "images/card-icon-8.png",
       "title": " Cynefin framework",
       "category": "DECISION MAKING",
+      "categorysty": "dec",
       "desc": " Make sense of different situations to choose an appropriate response."
     },
     {
@@ -41,6 +46,7 @@
       "image": "images/card-icon.png",
       "title": "Conflict Resolution Diagram",
       "category": "PROBLEM SOLVING",
+      "categorysty": "sol",
       "desc": "Find win-win solutions to conflicts"
     },
     {
@@ -48,6 +54,7 @@
       "image": "images/card-icon-9.png",
       "title": "Six Thinking Hats",
       "category": "DECISION MAKING",
+      "categorysty": "dec",
       "desc": "Look at a decision from different perspectives"
     },
 
@@ -56,6 +63,7 @@
       "image": "images/card-icon-10.png",
       "title": "Productive Thinking Model",
       "category": "PROBLEM SOLVING",
+      "categorysty": "sol",
       "desc": "Solve problems creatively and efficiently."
     },
     {
@@ -63,6 +71,7 @@
       "image": "images/card-icon-2.png",
       "title": " Connection circles",
       "category": "SYSTEMS THINKING",
+      "categorysty": "sys",
       "desc": "Understand relationships and identify feedback loops within systems."
     },
     {
@@ -70,6 +79,7 @@
       "image": "images/card-icon-11.png",
       "title": "Second-order thinking",
       "category": "DECISION MAKING",
+      "categorysty": "dec",
       "desc": "Consider the long-term consequences of your decisions."
     },
     {
@@ -77,6 +87,7 @@
       "image": "images/card-icon-3.png",
       "title": "Iceberg Model",
       "category": "SYSTEMS THINKING",
+      "categorysty": "dec",
       "desc": "Uncover root causes of events by looking at hidden levels of abstractions."
     },
     {
@@ -84,6 +95,7 @@
       "image": "images/card-icon-12.png",
       "title": "Eisenhower Matrix",
       "category": "DECISION MAKING",
+      "categorysty": "communication",
       "desc": "Prioritize your actions and tasks by importance and urgency"
     },
     {
@@ -91,6 +103,7 @@
       "image": "images/card-icon-13.png",
       "title": "Ladder of inference",
       "category": "DECISION MAKING",
+      "categorysty": "dec",
       "desc": "Avoid jumping to conclusions. Make decisions based on reality."
     },
     {
@@ -98,6 +111,7 @@
       "image": "images/card-icon-13.png",
       "title": "Abstraction laddering",
       "category": "DECISION MAKING",
+      "categorysty": "dec",
       "desc": "Frame your problem better with different levels of abstraction."
     },
     {
@@ -105,6 +119,7 @@
       "image": "images/card-icon-14.png",
       "title": "Decision matrix",
       "category": "DECISION MAKING",
+      "categorysty": "dec",
       "desc": "Choose the best option by considering multiple factors."
     },
     {
@@ -112,6 +127,7 @@
       "image": "images/card-icon-15.png",
       "title": "Inversion",
       "category": "PROBLEM SOLVING",
+      "categorysty": "sol",
       "desc": "Approach a problem from a different point of view."
     },
     {
@@ -119,6 +135,7 @@
       "image": "images/card-icon.png",
       "title": "Issue trees",
       "category": "PROBLEM SOLVING",
+      "categorysty": "sol",
       "desc": "Structure and solve problems in a systematic way."
     },
     {
@@ -126,6 +143,7 @@
       "image": "images/card-icon-16.png",
       "title": "Confidence determines speed vs. quality",
       "category": "DECISION MAKING",
+      "categorysty": "dec",
       "desc": "Determine a trade-off between speed and quality when building products."
     },
     {
@@ -133,6 +151,7 @@
       "image": "images/card-icon-5.png",
       "title": "First principles",
       "category": "PROBLEM SOLVING",
+      "categorysty": "sol",
       "desc": "Break down complex problems into basic elements and create innovative solutions from there."
     },
     {
@@ -140,6 +159,7 @@
       "image": "images/card-icon-17.png",
       "title": "Balancing feedback loop",
       "category": "SYSTEMS THINKING",
+      "categorysty": "sys",
       "desc": "Mechanism that pushes back against a change to create stability."
     },
     {
@@ -147,6 +167,7 @@
       "image": "images/card-icon-4.png",
       "title": "Reinforcing feedback loop",
       "category": "SYSTEMS THINKING",
+      "categorysty": "sys",
       "desc": "Make your communication more efficient and clear."
     },
     {
@@ -154,6 +175,7 @@
       "image": "images/card-icon-12.png",
       "title": "Hard choice model",
       "category": "DECISION MAKING",
+      "categorysty": "dec",
       "desc": "Figure out what kind of a decision you're making."
     }
     
