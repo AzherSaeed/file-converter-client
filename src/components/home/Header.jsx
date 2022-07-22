@@ -3,33 +3,24 @@ import React, { useState, useEffect } from 'react'
 import { Button } from 'react-bootstrap'
 import { Link} from "react-router-dom";
 import HeaderNav from '../common/HeaderNav';
+import data from '../../db.json'
 
 export default function Header() {
     const axios = require('axios');
 
-    const [cards, setCards] = useState([]);
+    const [cards, setCards] = useState(data.cards);
     const [filteredCard, setfilteredCard] = useState([])
 
 
+    console.log(data , 'data')
 
-    useEffect(() => {
-
-        axios.get('http://localhost:8000/cards')
-            .then(function (response) {
-                // handle success
-                setfilteredCard(response.data)
-                setCards(response.data);
-
-            })
-            .catch(function (error) {
-                // handle error
-                console.log(error);
-            });
-    }, []);
     if (!cards) {
         return <h1>Loading</h1>
     }
+
+
     const filterItems = (cate) => {
+        console.log(cate)
         if (cate) {
             setfilteredCard(cards)
             const updateCards = cards.filter((cruntEle) => {
@@ -68,8 +59,9 @@ export default function Header() {
             </div>
             <div className='main-content'>
                 {
-                    filteredCard.map((ele) => {
+                    cards.map((ele) => {
                         const { id, title, image, desc, category, categorysty } = ele;
+
                         return (
                             <div className="main-content-card" key={id}>
                                 <Link  to={category === "PDF Tools" ? `/detail/${id}` : '/'}>

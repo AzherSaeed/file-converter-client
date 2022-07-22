@@ -1,10 +1,10 @@
-import React from 'react'
+import {useEffect, useState} from 'react'
 import HeaderNav from '../components/common/HeaderNav'
 import Footer from '../components/home/Footer'
 import { Button } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
-import { useState } from 'react'
-import { useEffect } from 'react'
+import {saveAs} from 'file-saver'
+import data from '../db.json';
 
 export default function DetailPdf() {
     const {id} = useParams();
@@ -14,32 +14,69 @@ export default function DetailPdf() {
     const [pickFile, setpickFile] = useState(false)
     const [selectedFile, setSelectedFile] = useState("/images/card-icon.png");
 
+
     useEffect(() => {
+        const filteredCards = data.cards.find(card => card.id == id)
+        setCards(filteredCards)
+    },[data.cards])
 
-        axios.get(`http://localhost:8000/cards/${id}`)
-            .then(function (response) {
-                // handle success
-               
-                setCards(response.data);
 
-            })
-            .catch(function (error) {
-                // handle error
-                console.log(error);
-            });
-    }, []);
     
     const handleChose = (event) =>{
-        const imgFile = event.target.files[0].type;
+        const imgFile = event.target.files[0];
         const cardType = cards.type;
         setSelectedFile(event.target.files[0]);
-        if(imgFile == cardType){
-            setpickFile(true);      
 
-        }else{
-            alert("Please Choose the correct File");
-            setpickFile(false);
-        }
+
+        console.log(imgFile.type , cardType)
+        const formData = new FormData();
+        formData.append('file', imgFile);
+
+
+
+
+            if(cardType == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'){
+                fetch('https://tbs.zaptatech.com/api/fileUpload' , {
+                    method: 'POST',
+                    body:formData
+                })
+                    .then(async (res) =>{
+                        console.log(res, 'here is ressponse')
+                        if(res.status == 200){
+                            const resp = await  res.blob();
+                            saveAs(resp , `new${Date.now()}.pdf`)
+                        }
+                        else {
+                            alert('Something went wrong')
+                        }
+
+                    })
+
+            }
+            else if (cardType ==  'application/pdf') {
+                fetch('https://tbs.zaptatech.com/api/officetopdf' , {
+                    method: 'POST',
+                    body:formData
+                })
+                    .then(async (res) =>{
+                        console.log(res, 'here is ressponse')
+                        if(res.status == 200){
+                            const resp = await  res.blob();
+                            saveAs(resp , `new${Date.now()}.docx`)
+                        }
+                        else {
+                            alert('Something went wrong')
+                        }
+
+                    })
+            }
+
+
+
+
+            // setpickFile(true);
+
+
         
     }
 
