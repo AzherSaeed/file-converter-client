@@ -37,11 +37,11 @@ export default function DetailPdf() {
     
     if(pickFile){
         if(selectedFile.type == cards.type){
-            alert("ok hy boss");
+           
             
 
         }else{
-            alert("no no no");
+            alert("Please Choose the correct File");
             setpickFile(false);
         }
     }

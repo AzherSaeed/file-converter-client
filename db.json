@@ -97,7 +97,7 @@
       "image": "images/card-icon-3.png",
       "title": "Iceberg Model",
       "category": "SYSTEMS THINKING",
-      "categorysty": "dec",
+      "categorysty": "sys",
       "type":"text",
       "desc": "Uncover root causes of events by looking at hidden levels of abstractions."
     },
@@ -106,7 +106,7 @@
       "image": "images/card-icon-12.png",
       "title": "Eisenhower Matrix",
       "category": "DECISION MAKING",
-      "categorysty": "communication",
+      "categorysty": "dec",
       "type":"text",
       "desc": "Prioritize your actions and tasks by importance and urgency"
     },
@@ -202,7 +202,7 @@
     },
     {
       "id": 23,
-      "image": "images/card-icon-19.svg",
+      "image": "images/card-icon-20.png",
       "title": "PDF to Word",
       "category": "PDF Tools",
       "categorysty": "dec",
@@ -211,7 +211,7 @@
     },
     {
       "id": 24,
-      "image": "images/card-icon-18.svg",
+      "image": "images/card-icon-21.png",
       "title": "Word to PDF",
       "category": "PDF Tools",
       "categorysty": "dec",
