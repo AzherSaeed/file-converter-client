@@ -177,6 +177,22 @@
       "category": "DECISION MAKING",
       "categorysty": "dec",
       "desc": "Figure out what kind of a decision you're making."
+    },
+    {
+      "id": 23,
+      "image": "images/card-icon-19.svg",
+      "title": "PDF to Word",
+      "category": "PDF Tools",
+      "categorysty": "dec",
+      "desc": "Convert PDF files to Word (doc, docx) and make them available for editing"
+    },
+    {
+      "id": 24,
+      "image": "images/card-icon-18.svg",
+      "title": "Word to PDF",
+      "category": "PDF Tools",
+      "categorysty": "dec",
+      "desc": "Convert Word files (doc, docx) to PDF"
     }
     
   ]
