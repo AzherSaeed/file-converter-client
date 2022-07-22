@@ -28,23 +28,22 @@ export default function DetailPdf() {
                 console.log(error);
             });
     }, []);
-    const handleChose = (event) =>{
-        setSelectedFile(event.target.files[0]);
-        setpickFile(true);
-        
-    }
-
     
-    if(pickFile){
-        if(selectedFile.type == cards.type){
-           
-            
+    const handleChose = (event) =>{
+        const imgFile = event.target.files[0].type;
+        const cardType = cards.type;
+        setSelectedFile(event.target.files[0]);
+        if(imgFile == cardType){
+            setpickFile(true);      
 
         }else{
             alert("Please Choose the correct File");
             setpickFile(false);
         }
+        
     }
+
+    
 
     
     const handleRemove = () =>{
