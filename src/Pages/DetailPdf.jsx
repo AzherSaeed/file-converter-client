@@ -10,7 +10,9 @@ export default function DetailPdf() {
     const {id} = useParams();
     const axios = require('axios');
 
-    const [cards, setCards] = useState([]);
+    const [cards, setCards] = useState(null);
+    const [pickFile, setpickFile] = useState(false)
+    const [selectedFile, setSelectedFile] = useState("/images/card-icon.png");
 
     useEffect(() => {
 
@@ -26,13 +28,41 @@ export default function DetailPdf() {
                 console.log(error);
             });
     }, []);
+    const handleChose = (event) =>{
+        setSelectedFile(event.target.files[0]);
+        setpickFile(true);
+        
+    }
+
+    
+    if(pickFile){
+        if(selectedFile.type == cards.type){
+            alert("ok hy boss");
+            
+
+        }else{
+            alert("no no no");
+            setpickFile(false);
+        }
+    }
+
+    
+    const handleRemove = () =>{
+        setpickFile(false);
+    }
+
     if (!cards) {
-        return <h1>Loading</h1>
+        return<div className="loader">
+            <h1>Loading</h1>
+        </div>
+         
     }
   
  
   return (
+    
     <div>
+
         <div className="detail-hero">
             <HeaderNav />
             <div className="detail-hero-content">
@@ -42,19 +72,36 @@ export default function DetailPdf() {
                     <div className="detail-hero-content-des">
                         <p>{cards.desc}</p>
                     </div>
-                    <div className="detail-hero-content-nav">
-                        
-                        <label for="inputTag">
-                            CHOOSE FILE
-                            <input id="inputTag" type="file"  className="detail-hero-content-nav-home-btn"/>
-                        </label>
 
-                       
+                    {
+                        pickFile ?(
+                            
+                            
+                            <div className="detail-hero-content-butn">
+                                
+                                  
+                                
+                                <p>{selectedFile.name}</p>
+                                <a className='btn btn-outline-danger' onClick={handleRemove}>Remove</a>
+                                <Button className='btn btn-primary'><i className="fa fa-download"></i> Download</Button>
+                            </div>
 
-                    </div>
-                    <div className="detail-hero-content-butn">
-                    <Button className='btn btn-primary'><i className="fa fa-download"></i> Download</Button>
-                    </div>
+                        ):
+                        (
+                        <div className="detail-hero-content-nav">
+                    
+                            <label htmlFor="inputTag">
+                                CHOOSE FILE
+                                <input id="inputTag" type="file"  onChange={handleChose}  className="detail-hero-content-nav-home-btn"/>
+                                
+                            </label>
+    
+                        </div> 
+
+                        )
+
+                    }
+
              </div>
         </div>
         
