@@ -5,6 +5,8 @@ import { Button } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import {saveAs} from 'file-saver'
 import data from '../db.json';
+import Spinner from 'react-bootstrap/Spinner';
+
 
 export default function DetailPdf() {
     const {id} = useParams();
@@ -13,6 +15,7 @@ export default function DetailPdf() {
     const [cards, setCards] = useState(null);
     const [pickFile, setpickFile] = useState(false)
     const [selectedFile, setSelectedFile] = useState("/images/card-icon.png");
+    const [fileLoading, setFileLoading] = useState(false);
 
 
     useEffect(() => {
@@ -23,6 +26,7 @@ export default function DetailPdf() {
 
     
     const handleChose = (event) =>{
+        setFileLoading(true)
         const imgFile = event.target.files[0];
         const cardType = cards.type;
         setSelectedFile(event.target.files[0]);
@@ -35,46 +39,48 @@ export default function DetailPdf() {
 
 
 
-            if(cardType == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'){
-                fetch('https://tbs.zaptatech.com/api/fileUpload' , {
+
+            if (cardType ==  'application/pdf') {
+                fetch('http://localhost:8080/api/officetopdf' , {
                     method: 'POST',
                     body:formData
                 })
                     .then(async (res) =>{
-                        console.log(res, 'here is ressponse')
-                        if(res.status == 200){
-                            const resp = await  res.blob();
-                            saveAs(resp , `new${Date.now()}.pdf`)
-                        }
-                        else {
-                            alert('Something went wrong')
-                        }
-
-                    })
-
-            }
-            else if (cardType ==  'application/pdf') {
-                fetch('https://tbs.zaptatech.com/api/officetopdf' , {
-                    method: 'POST',
-                    body:formData
-                })
-                    .then(async (res) =>{
+                        setFileLoading(false)
                         console.log(res, 'here is ressponse')
                         if(res.status == 200){
                             const resp = await  res.blob();
                             saveAs(resp , `new${Date.now()}.docx`)
                         }
                         else {
-                            alert('Something went wrong')
+                            alert('Please choose file with docx extension')
                         }
 
                     })
+            }
+            else {
+                fetch('http://localhost:8080/api/fileUpload' , {
+                    method: 'POST',
+                    body:formData
+                })
+                    .then(async (res) =>{
+                        setFileLoading(false)
+                        console.log(res, 'here is ressponse')
+                        if(res.status == 200){
+                            const resp = await  res.blob();
+                            saveAs(resp , `new${Date.now()}.pdf`)
+                        }
+                        else {
+                            alert('Please choose file with pdf extension')
+                        }
+
+                    })
+
             }
 
 
 
 
-            // setpickFile(true);
 
 
         
@@ -93,7 +99,7 @@ export default function DetailPdf() {
         </div>
          
     }
-  
+
  
   return (
     
@@ -108,30 +114,34 @@ export default function DetailPdf() {
                     <div className="detail-hero-content-des">
                         <p>{cards.desc}</p>
                     </div>
+                {
+                    fileLoading ?
+                        <Spinner animation="border" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </Spinner>
+                        : null
+                }
 
-                    {
+
+
+                {
                         pickFile ?(
                             
                             
                             <div className="detail-hero-content-butn">
-                                
-                                  
-                                
                                 <p>{selectedFile.name}</p>
                                 <a className='btn btn-outline-danger' onClick={handleRemove}>Remove</a>
+
                                 <Button className='btn btn-primary'><i className="fa fa-download"></i> Download</Button>
                             </div>
 
                         ):
                         (
                         <div className="detail-hero-content-nav">
-                    
                             <label htmlFor="inputTag">
                                 CHOOSE FILE
-                                <input id="inputTag" type="file"  onChange={handleChose}  className="detail-hero-content-nav-home-btn"/>
-                                
+                                <input disabled={fileLoading} id="inputTag" type="file"  onChange={handleChose}  className="detail-hero-content-nav-home-btn"/>
                             </label>
-    
                         </div> 
 
                         )

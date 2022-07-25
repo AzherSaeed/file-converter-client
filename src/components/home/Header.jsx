@@ -9,7 +9,7 @@ export default function Header() {
     const axios = require('axios');
 
     const [cards, setCards] = useState(data.cards);
-    const [filteredCard, setfilteredCard] = useState([])
+    const [filteredCard, setfilteredCard] = useState(data.cards)
 
 
     console.log(data , 'data')
@@ -59,7 +59,7 @@ export default function Header() {
             </div>
             <div className='main-content'>
                 {
-                    cards.map((ele) => {
+                    filteredCard.map((ele) => {
                         const { id, title, image, desc, category, categorysty } = ele;
 
                         return (

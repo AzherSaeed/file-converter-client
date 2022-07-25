@@ -215,7 +215,7 @@
       "title": "Word to PDF",
       "category": "PDF Tools",
       "categorysty": "dec",
-      "type":"application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "type":"application/vnd.openxmlformats-officedocument.wordprocessingml.documen  t",
       "desc": "Convert Word files (doc, docx) to PDF"
     }
 
