@@ -25,7 +25,6 @@ export default function DetailPdf() {
     },[data.cards])
 
 
-    console.log({selectedFile})
     const handleChose = (event) =>{
         setFileLoading(true)
         const imgFile = event.target.files[0];
@@ -33,16 +32,12 @@ export default function DetailPdf() {
         setSelectedFile(event.target.files[0]);
 
 
-        console.log(imgFile.type , cardType)
         const formData = new FormData();
         formData.append('file', imgFile);
 
 
-
-
-
             if (cardType ==  'application/pdf') {
-                fetch('https://6015-39-46-62-162.ap.ngrok.io/api/officetopdf' , {
+                fetch('https://2a2d-39-46-3-224.ap.ngrok.io/api/officetopdf' , {
                     method: 'POST',
                     body:formData
                 })
@@ -56,13 +51,13 @@ export default function DetailPdf() {
                             // saveAs(resp , `new${Date.now()}.docx`)
                         }
                         else {
-                            alert('Please choose file with docx extension')
+                            alert('Please choose file with pdf extension')
                         }
 
                     })
             }
             else {
-                fetch('https://6015-39-46-62-162.ap.ngrok.io/api/fileUpload' , {
+                    fetch('https://2a2d-39-46-3-224.ap.ngrok.io/api/fileUpload' , {
                     method: 'POST',
                     body:formData
                 })
@@ -74,7 +69,7 @@ export default function DetailPdf() {
                             setpickFile(true)
                         }
                         else {
-                            alert('Please choose file with pdf extension')
+                            alert('Please choose file with docx or doc extension')
                         }
 
                     })
@@ -107,15 +102,19 @@ export default function DetailPdf() {
 
     const downloadHandler = () => {
         console.log(selectedFile , 'selectedFile')
-        if(selectedFile.type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'){
+        setpickFile(false);
+        if(selectedFile.type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || selectedFile.type === 'application/msword'){
             saveAs(responseSave , `new${Date.now()}.pdf`)
 
         }
         else if(selectedFile.type === 'application/pdf' ){
             saveAs(responseSave , `new${Date.now()}.docx`)
         }
+        else{
+            alert('Your file not a right for convertable')
+        }
     }
- 
+
   return (
     
     <div>

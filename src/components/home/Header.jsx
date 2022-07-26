@@ -12,7 +12,6 @@ export default function Header() {
     const [filteredCard, setfilteredCard] = useState(data.cards)
 
 
-    console.log(data , 'data')
 
     if (!cards) {
         return <h1>Loading</h1>
