@@ -16,6 +16,7 @@ export default function DetailPdf() {
     const [pickFile, setpickFile] = useState(false)
     const [selectedFile, setSelectedFile] = useState("/images/card-icon.png");
     const [fileLoading, setFileLoading] = useState(false);
+    const [responseSave, setResponseSave] = useState('');
 
 
     useEffect(() => {
@@ -24,7 +25,7 @@ export default function DetailPdf() {
     },[data.cards])
 
 
-    
+    console.log({selectedFile})
     const handleChose = (event) =>{
         setFileLoading(true)
         const imgFile = event.target.files[0];
@@ -41,7 +42,7 @@ export default function DetailPdf() {
 
 
             if (cardType ==  'application/pdf') {
-                fetch('http://localhost:8080/api/officetopdf' , {
+                fetch('https://4174-39-46-62-162.ap.ngrok.io/api/officetopdf' , {
                     method: 'POST',
                     body:formData
                 })
@@ -50,7 +51,9 @@ export default function DetailPdf() {
                         console.log(res, 'here is ressponse')
                         if(res.status == 200){
                             const resp = await  res.blob();
-                            saveAs(resp , `new${Date.now()}.docx`)
+                            setResponseSave(resp)
+                            setpickFile(true)
+                            // saveAs(resp , `new${Date.now()}.docx`)
                         }
                         else {
                             alert('Please choose file with docx extension')
@@ -59,16 +62,16 @@ export default function DetailPdf() {
                     })
             }
             else {
-                fetch('http://localhost:8080/api/fileUpload' , {
+                fetch('https://4174-39-46-62-162.ap.ngrok.io/api/fileUpload' , {
                     method: 'POST',
                     body:formData
                 })
                     .then(async (res) =>{
                         setFileLoading(false)
-                        console.log(res, 'here is ressponse')
                         if(res.status == 200){
                             const resp = await  res.blob();
-                            saveAs(resp , `new${Date.now()}.pdf`)
+                            setResponseSave(resp)
+                            setpickFile(true)
                         }
                         else {
                             alert('Please choose file with pdf extension')
@@ -100,6 +103,18 @@ export default function DetailPdf() {
          
     }
 
+
+
+    const downloadHandler = () => {
+        console.log(selectedFile , 'selectedFile')
+        if(selectedFile.type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'){
+            saveAs(responseSave , `new${Date.now()}.pdf`)
+
+        }
+        else if(selectedFile.type === 'application/pdf' ){
+            saveAs(responseSave , `new${Date.now()}.docx`)
+        }
+    }
  
   return (
     
@@ -132,7 +147,7 @@ export default function DetailPdf() {
                                 <p>{selectedFile.name}</p>
                                 <a className='btn btn-outline-danger' onClick={handleRemove}>Remove</a>
 
-                                <Button className='btn btn-primary'><i className="fa fa-download"></i> Download</Button>
+                                <Button onClick={() => downloadHandler()} className='btn btn-primary'><i className="fa fa-download"></i> Download</Button>
                             </div>
 
                         ):

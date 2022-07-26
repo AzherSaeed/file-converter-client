@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import {Link} from "react-router-dom";
+
 
 export default function HeaderNav() {
     const [closetoggle, setclosetoggle] = useState(true);
@@ -10,7 +12,7 @@ export default function HeaderNav() {
   return (
     <div className='header'>
         <div className="header-logo">
-            <a href="#">untools</a>
+            <Link to="/">untools</Link>
         </div>
         <div className="header-toggle">
             <i onClick={() => toggerHandler()} className={closetoggle ? 'fa fa-bars' : 'fa fa-times'}></i>
