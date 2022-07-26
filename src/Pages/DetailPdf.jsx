@@ -42,7 +42,7 @@ export default function DetailPdf() {
 
 
             if (cardType ==  'application/pdf') {
-                fetch('https://4174-39-46-62-162.ap.ngrok.io/api/officetopdf' , {
+                fetch('https://6015-39-46-62-162.ap.ngrok.io/api/officetopdf' , {
                     method: 'POST',
                     body:formData
                 })
@@ -62,7 +62,7 @@ export default function DetailPdf() {
                     })
             }
             else {
-                fetch('https://4174-39-46-62-162.ap.ngrok.io/api/fileUpload' , {
+                fetch('https://6015-39-46-62-162.ap.ngrok.io/api/fileUpload' , {
                     method: 'POST',
                     body:formData
                 })
